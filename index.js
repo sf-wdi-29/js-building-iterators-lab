@@ -7,7 +7,7 @@ var myReduce = require('./myEach');
   To run it on the console do: `node index.js`
 ***********************************************************************/
 
-var numArray = [0,1,10,100,1000];
+//var numArray = [0,1,10,100,1000];
 
 
 /* myEach */
@@ -30,4 +30,4 @@ var numArray = [0,1,10,100,1000];
 // console.log(output === ["A", "B", "C"]) // assertion
 
 
-console.log("the end");
+//console.log("the end");
