@@ -3,7 +3,11 @@
 function myMap(arr, callback) {
 
 //  CODE INSIDE HERE   //
-
+  newArray = [];
+  for(var i = 0; i < arr.length; i++){
+    newArray.push(callback(i))
+  }
+  return newArray
 }
 
 /*
