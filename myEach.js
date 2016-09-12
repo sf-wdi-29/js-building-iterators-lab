@@ -3,7 +3,9 @@
 function myEach(arr, callback) {
 
 //  CODE INSIDE HERE   //
-
+  for(i = 0; i < arr.length; i++ ){
+  	callback(arr[i], i, arr);
+  }
 }
 
 /*
