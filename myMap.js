@@ -1,10 +1,13 @@
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Map
 
 function myMap(arr, callback) {
+	var newNumArray = [];
 
-//  CODE INSIDE HERE   //
-
-}
+	for(var i = 0; i < arr.length; i++) {
+		newNumArray.push(callback(arr[i], i, arr));
+	}
+	return newNumArray;
+};
 
 /*
  Best if you don't code out here.
