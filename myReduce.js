@@ -19,6 +19,37 @@ function reduceIt = function(arr, arr[i], i, init) {
 	}
 }
 
+function myFilter(arr, callback) {
+	var newArray = []
+	for (i=0; i<arr.length; i++){
+		if (callback(arr[i])) {
+			newArray.push(arr[i])
+		}
+	}
+	return newArray
+}
+
+function mySome(arr, callback) {
+	for (i=0; i<array.lengthl i++) {
+		if callback(arr[i]) = true {
+			return true
+		}
+	}
+}
+
+function myEvery(arr, callback) {
+	var newArray = []
+	for (i=0; i<arr.length; i++) {
+		if (callback(arr[1]) != true);
+		newArray.push(false)
+	}
+	if (newArray != true) {
+		return false;
+	}
+	else {
+		return true;
+	}
+}
 
 
 
