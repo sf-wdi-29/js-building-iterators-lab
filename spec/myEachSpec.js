@@ -23,13 +23,13 @@ describe('myEach', function() {
   it("takes a function as the second argument and calls that function (callback)", function testCallback() {
     function spyOnMe() {}
     var spy = chai.spy(spyOnMe);
-    myEach(testArr, spy);
+    testArr.myEach(spy);
     expect(spy).to.have.been.called();
   });
 
   it("passes each value in the array to the callback", function testEachItem(){
     var resultingArray = [];
-    myEach(testArr, function(item) {
+    testArr.myEach(function(item) {
       resultingArray.push(item);
     });
     // compare elements in the result to expected array
@@ -40,7 +40,7 @@ describe('myEach', function() {
   it("passes each value in the array to the callback, even non-integers", function testArrayPassing() {
     var resultingArray = [];
     var complexTestArr = ['snoopy', 32, {k: 'val'}, [2,3] ];
-    myEach(complexTestArr, function(item) {
+    complexTestArr.myEach(function(item) {
       resultingArray.push(item);
     });
 
@@ -51,7 +51,7 @@ describe('myEach', function() {
 
   it("passes each index in the array to the callback as argument 2", function testEachIndex() {
     var resultingArray = [];
-    myEach(testArr, function(_item, index) {
+    testArr.myEach(function(_item, index) {
       resultingArray.push(index);
     });
     // compare elements in the result to expected array
@@ -62,7 +62,7 @@ describe('myEach', function() {
 
   it("passes the entire array to the callback as the 3rd argument", function testArrayPassing() {
     var resultingArray = [];
-    myEach(testArr, function(_item, _index, arr) {
+    testArr.myEach(function(_item, _index, arr) {
       console.log('       results: ', arr);
       // each time the callback is called verify that the array is as expected
       // until the callback is called though, this test will still pass
@@ -71,7 +71,7 @@ describe('myEach', function() {
   });
 
   it("returns undefined", function() {
-    var results = myEach(testArr, function(){});
+    var results = testArr.myEach(function(){});
     expect(results).to.be.a("undefined");
   });
 
@@ -79,7 +79,7 @@ describe('myEach', function() {
   // edge cases
   it("doesn't alter the original array", function testAlterations() {
     var resultingArray = [];
-    myEach(testArr, function(_item, _index, _arr) {
+    testArr.myEach(function(_item, _index, _arr) {
       resultingArray.push('nothing');
     });
     // compare elements in the result to expected array
@@ -90,7 +90,7 @@ describe('myEach', function() {
 
   it("works with arrays of length 0", function testArrayL0() {
     var resultingArray = [];
-    myEach([], function(item) {
+    [].myEach(function(item) {
       resultingArray.push(item);
     });
     // compare elements in the result to expected array
@@ -102,7 +102,7 @@ describe('myEach', function() {
 
   it("works with arrays of length 1", function testArrayL1() {
     var resultingArray = [];
-    myEach([13], function(item) {
+    [13].myEach(function(item) {
       resultingArray.push(item);
     });
     // compare elements in the result to expected array

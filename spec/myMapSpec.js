@@ -23,13 +23,13 @@ describe('myMap', function() {
   it("takes a function as the second argument and calls that function (callback)", function testCallback() {
     function spyOnMe() {}
     var spy = chai.spy(spyOnMe);
-    myMap(testArr, spy);
+    testArr.myMap(spy);
     expect(spy).to.have.been.called();
   });
 
   it("passes each value in the array to the callback", function testEachItem(){
     var resultingArray = [];
-    myMap(testArr, function(item) {
+    testArr.myMap(function(item) {
       resultingArray.push(item);
     });
     // compare elements in the result to expected array
@@ -40,7 +40,7 @@ describe('myMap', function() {
 
   it("passes each index in the array to the callback as argument 2", function testEachIndex() {
     var resultingArray = [];
-    myMap(testArr, function(_item, index) {
+    testArr.myMap(function(_item, index) {
       resultingArray.push(index);
     });
     // compare elements in the result to expected array
@@ -51,7 +51,7 @@ describe('myMap', function() {
 
   it("passes the entire array to the callback as the 3rd argument", function testArrayPassing() {
     var resultingArray = [];
-    myMap(testArr, function(_item, _index, arr) {
+    testArr.myMap(function(_item, _index, arr) {
       console.log('       results: ', arr);
       // each time the callback is called verify that the array is as expected
       // Note: until the callback is called though, this test will still pass
@@ -60,7 +60,7 @@ describe('myMap', function() {
   });
 
   it("returns an array", function() {
-    var results = myMap(testArr, function() {
+    var results = testArr.myMap(function() {
       // no-op
     });
     console.log('       results: ', results);
@@ -68,13 +68,13 @@ describe('myMap', function() {
   });
 
   it("returns an array with the same number of elements", function() {
-    var results = myMap(testArr, function(){});
+    var results = testArr.myMap(function(){});
     console.log('       results: ', results);
     expect(results.length).to.equal(testArr.length);
   });
 
   it("returns an array constructed from the return values of the callback", function() {
-    var results = myMap(testArr, function(){
+    var results = testArr.myMap(function(){
       return 999;
     });
     console.log('       results: ', results);
@@ -85,7 +85,7 @@ describe('myMap', function() {
   // edge cases
   it("doesn't alter the original array", function testAlterations() {
     var resultingArray = [];
-    myMap(testArr, function(_item, _index, _arr) {
+    testArr.myMap(function(_item, _index, _arr) {
       resultingArray.push('nothing');
     });
     // compare elements in the result to expected array
@@ -96,7 +96,7 @@ describe('myMap', function() {
 
   it("works with arrays of length 0", function testArrayL0() {
     var resultingArray = [];
-    myMap([], function(item) {
+    [].myMap(function(item) {
       resultingArray.push(item);
     });
     // compare elements in the result to expected array
@@ -107,7 +107,7 @@ describe('myMap', function() {
 
   it("works with arrays of length 1", function testArrayL1() {
     var resultingArray = [];
-    myMap([13], function(item) {
+    [13].myMap(function(item) {
       resultingArray.push(item);
     });
     // compare elements in the result to expected array
