@@ -46,7 +46,6 @@ Array.prototype.mySome = function(callback, thisArg = this) {
     return false;
 }
 
-}
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
 
 Array.prototype.myEvery = function(callback, thisArg = this) {
