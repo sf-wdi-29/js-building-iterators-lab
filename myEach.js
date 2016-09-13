@@ -1,10 +1,14 @@
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/ForEach
 
 function myEach(arr, callback) {
+	for(var i = 0; i < arr.length; i++){
+		callback(arr[i], i, arr);
+	}
+};
 
 //  CODE INSIDE HERE   //
 
-}
+
 
 /*
  Best if you don't code out here.
