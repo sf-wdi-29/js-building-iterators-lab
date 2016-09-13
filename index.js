@@ -1,6 +1,6 @@
 var myEach = require('./myEach');
-var myMap = require('./myEach');
-var myReduce = require('./myEach');
+var myMap = require('./myMap');
+var myReduce = require('./myReduce');
 /* *********************************************************************
   You can edit this file
   It will make use of your code in myEach.js, myMap.js and myReduce.js
@@ -8,6 +8,13 @@ var myReduce = require('./myEach');
 ***********************************************************************/
 
 var numArray = [0,1,10,100,1000];
+
+
+// function myEach(callback, i, array) {
+// 	for(var i = 0; i < array.length; i++) {
+// 		callback(array[i]);
+// 	}
+// };
 
 
 /* myEach */
@@ -18,6 +25,10 @@ var numArray = [0,1,10,100,1000];
 // });
 
 
+var singleNumArray = [50,60,70,80];
+var doubleNumArray = myMap(arrIndex, function(num, numIndex, originalArry) {
+	return num * 2;
+});
 
 
 /* myMap */
