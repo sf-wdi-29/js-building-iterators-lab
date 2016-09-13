@@ -3,14 +3,21 @@
 
 function myReduce(arr, callback) {
 
-//  CODE INSIDE HERE   //
-
+function reduceIt = function(arr, arr[i], i, init) {
+	var result = arr[0]
+	if !init {
+		for (i = 1; i < arr.length; i ++) {
+			result = callback(result, arr[i], i, arr);
+		}
+	}
+	else {
+		result = init
+		for (i = 0; i < arr.length; i++) {
+			var result = callback(result, arr[i], i, arr);
+		}
+		return result
+	}
 }
-
-/*
- Best if you don't code out here.
- If you want to check your code, use `index.js`!
-*/
 
 
 
