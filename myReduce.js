@@ -3,17 +3,18 @@
 
 function myReduce(arr, callback,initialValue) {
   var result;
-
+  var i=0;
   if(initialValue != undefined){
     result=initialValue;
   }
   else {
     result=arr[0];
+    i++;
   }
  if(arr.length > 0) {
 
 
-for(var i=1 ;i < arr.length ;i++){
+for( ;i < arr.length ;i++){
  result=  callback(result, arr[i],i,arr);
 }
 }
